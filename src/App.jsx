@@ -1,23 +1,17 @@
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 export default function App() {
   return (
-    <main className="container mx-auto px-4 py-12"> 
-      <div className="max-w-2xl">
-        <h1 className="text-5xl font-bold text-(--text) mb-6">
-          Welcome to My Portfolio
-        </h1>
+    <div className="min-h-screen flex flex-col bg-(--bg) text-(--text)">
+      <Header />
 
-        <p className="text-lg text-(--muted) leading-relaxed mb-8">
-          This is a simple portfolio website built with React and Tailwind CSS.
-        </p>
+      <main className="flex-1 container mx-auto">
+        <Outlet />
+      </main>
 
-        <div className="bg-(--surface) border border-(--bordercolor) rounded-lg p-6">
-          <div className="text-sm text-(--muted) space-y-1">
-            <p> Tailwind Active!</p>
-            <p> Thema Loaded! </p>
-            <p> First UI Works! </p>
-          </div>
-        </div>
-      </div>
-    </main>
+      <Footer />
+    </div>
   );
 }
